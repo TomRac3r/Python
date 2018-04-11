@@ -12,23 +12,28 @@ import random
 #import this
 
 def bonjour_random():
-    """Fonction affichant un bonjour random =)"""
-    nb_rand = random.randint(1, 3)
+    """Fonction affichant un bonjour random parmis 4 choix =)"""
+    nb_rand = random.randint(1, 4)
     if (nb_rand == 1):
         print('Yo !')
     elif (nb_rand == 2):
         print('Wesh alors !')
     elif (nb_rand == 3):
         print('Mes salutations camarade !')
+    elif (nb_rand == 4):
+        print('#YOLO')
 
 
 def nombre_random() :
     """Fonction pour faire un nombre random dans l'intervalle [0, 10]"""
     nb_random = random.randint(0, 10)
+    return nb_random
 
 
 def devinette_nombre():
-    """Fonction permettant un petit jeu de devinette"""
+    """Fonction permettant un petit jeu de devinette, on génére un nb_random puis on le compare avec
+    un nombre saisi par l'utilisateur (nbr_du_joueur) / On affiche aussi le nb_esai avec un simple
+    incrément à chaque tentative."""
     nb_essai = 0
     while True:
         nbr_du_joueur = input('Saisi un nombre : ')
@@ -43,4 +48,6 @@ def devinette_nombre():
         nb_essai = nb_essai + 1
         print('Tu es déjà à ton ', nb_essai, ' essai...')
         
-bonjour_random()        
+bonjour_random()  
+nombre_random()    
+devinette_nombre()
