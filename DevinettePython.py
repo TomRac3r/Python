@@ -19,7 +19,7 @@ import random
 
 def bonjour_random():
     """Fonction affichant un bonjour random parmis 4 choix =)"""
-    nb_rand = random.randint(1, 4)
+    nb_rand = random.randint(1, 5)
     if (nb_rand == 1):
         print('Yo !')
     elif (nb_rand == 2):
@@ -28,6 +28,8 @@ def bonjour_random():
         print('Mes salutations camarade !')
     elif (nb_rand == 4):
         print('#YOLO')
+    elif (nb_rand == 5):
+        import this
               
 #################################################################
 #################################################################
@@ -54,7 +56,7 @@ def devinette_nombre():
     nb_essai = 0
     INVITE = 'Saisi un nombre : ' 
 #INVITE est en majuscules car c'est une constante, 
-##convention d'écriture :variable=minuscules / CONSTANTES=MAJUSCULES
+##convention d'écriture : variable=minuscules / CONSTANTES=MAJUSCULES
     while True:
         nbr_du_joueur = input(INVITE)
         if (nb_random == int(nbr_du_joueur)):
@@ -92,4 +94,3 @@ def jouer():
 #################################################################
 #################################################################
 bonjour_random()
-jouer()
