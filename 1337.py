@@ -10,14 +10,15 @@ Created on Wed Apr 11 14:10:36 2018
 ###                       SECTION IMPORT                      ###
 #################################################################
 
-
+print('w3sh l3s kh3ys')
+print('')
 
 #################################################################
 ###              SECTION DEFINITION DES CONSTANTES            ###
 #################################################################
 
 MESSAGE_TEST = input('Saisir un texte à coder : ')
-TEST_SUBSTITUTION = [['a', '4'], ['e', '3'], ['l', '1'],['o', '0'],['t', '7']]
+TEST_SUBSTITUTION = [['a', '4'], ['e', '3'], ['l', '1'],['o', '0'],['s', '5'],['t', '7']]
 
 #################################################################
 ###              SECTION DEFINITIN DES FONCTIONS              ###
@@ -25,8 +26,6 @@ TEST_SUBSTITUTION = [['a', '4'], ['e', '3'], ['l', '1'],['o', '0'],['t', '7']]
 
 def codeur_1337(message, substitutions):
     """Fonction permettant de coder en leet/1337. On récupère un str puis on le code en 1337"""
-    print('w3sh l3s kh3ys')
-    print('')
     for s in substitutions:
         vieux_str = s[0]
         nouv_str = s[1]
