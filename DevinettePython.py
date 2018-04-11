@@ -7,6 +7,7 @@ Ceci est un script temporaire.
 
 """Programmer avec Python en s'amusant, Projet 3 'Un jeu de devinette'"""
 import random
+import sys
 
 #import antigravity
 #import this
@@ -16,10 +17,27 @@ import random
 ##                      BLOC INTER-LIGNE                       ##
 #################################################################
 #################################################################
+QUITTER = -1
+QUIT_TXT = 'q'
+
+def confirm_quit():
+    """Fonction demandant la confirmation pour quitter"""
+    CONFIRM_QUITTER = 'Etes-vous certains de vouloir quitter (O/n) ? '
+    confirm = input(CONFIRM_QUITTER)
+    if (confirm == 'n'):
+        return False
+    else :
+        return True
+
+#################################################################
+#################################################################
+##                      BLOC INTER-LIGNE                       ##
+#################################################################
+#################################################################
 
 def bonjour_random():
     """Fonction affichant un bonjour random parmis 4 choix =)"""
-    nb_rand = random.randint(1, 5)
+    nb_rand = random.randint(1, 4)
     if (nb_rand == 1):
         print('Yo !')
     elif (nb_rand == 2):
@@ -28,8 +46,6 @@ def bonjour_random():
         print('Mes salutations camarade !')
     elif (nb_rand == 4):
         print('#YOLO')
-    elif (nb_rand == 5):
-        import this
               
 #################################################################
 #################################################################
@@ -56,20 +72,27 @@ def devinette_nombre():
     nb_essai = 0
     INVITE = 'Saisi un nombre : ' 
 #INVITE est en majuscules car c'est une constante, 
-##convention d'écriture : variable=minuscules / CONSTANTES=MAJUSCULES
+##convention d'écriture : variable=minuscules / CONSTANTES=CAPITLES
     while True:
         nbr_du_joueur = input(INVITE)
+    #boucle pour la sortie du jeu
+        if (nbr_du_joueur == QUIT_TXT): 
+            if confirm_quit():          
+                return exit
+            else :
+                continue
+    #fin boucle pour la sortie du jeu
         if (nb_random == int(nbr_du_joueur)):
             print("GG mon gral ! t'as trouvé")
             print('Tu as essayé ', nb_essai, ' fois avant de réussir!')
+            return nb_essai
             break
         elif (int(nbr_du_joueur) > nb_random):
             print('Ton nombre est plus grand ! essaye encore...')
         elif (int(nbr_du_joueur) < nb_random):
             print('Ton nombre est plus petit...essaye encore !')
         nb_essai = nb_essai + 1
-        print('Tu es déjà à ton ', nb_essai, ' essai...')   
-    return nb_essai
+        print('Tu es déjà à ton ', nb_essai, ' essai...')
 
 #################################################################
 #################################################################

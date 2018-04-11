@@ -18,7 +18,7 @@ print('')
 #################################################################
 
 MESSAGE_TEST = input('Saisir un texte à coder : ')
-TEST_SUBSTITUTION = [['a', '4'], ['e', '3'], ['l', '1'],['o', '0'],['s', '5'],['t', '7']]
+TEST_SUBSTITUTION = [['a', '4'], ['b', '6'], ['e', '3'], ['l', '1'],['o', '0'],['s', '5'],['t', '7']]
 
 #################################################################
 ###              SECTION DEFINITIN DES FONCTIONS              ###
@@ -30,6 +30,7 @@ def codeur_1337(message, substitutions):
         vieux_str = s[0]
         nouv_str = s[1]
         message = message.replace(vieux_str, nouv_str)
+        print('Message en cours de traitement : ', message)
     print('Ceci est le message à coder : ', MESSAGE_TEST)
     print('')
     return print('Voici le message codé : ', message)
