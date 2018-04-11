@@ -52,7 +52,7 @@ def devinette_nombre():
     """Fonction permettant un petit jeu de devinette, on génére un nb_random puis on le compare avec
     un nombre saisi par l'utilisateur (nbr_du_joueur) / On affiche aussi le nb_esai avec un simple
     incrément à chaque tentative."""
-    nb_random = random.randint(0, 10)
+    nb_random = random.randint(0, 3)
     nb_essai = 0
     INVITE = 'Saisi un nombre : ' 
 #INVITE est en majuscules car c'est une constante, 
@@ -68,8 +68,9 @@ def devinette_nombre():
         elif (int(nbr_du_joueur) < nb_random):
             print('Ton nombre est plus petit...essaye encore !')
         nb_essai = nb_essai + 1
-        print('Tu es déjà à ton ', nb_essai, ' essai...')
-        
+        print('Tu es déjà à ton ', nb_essai, ' essai...')   
+    return nb_essai
+
 #################################################################
 #################################################################
 ##                      BLOC INTER-LIGNE                       ##
@@ -78,19 +79,24 @@ def devinette_nombre():
          
 def jouer():
     """Fonction permettant le jeu 'devinette_nombre' avec un pseudo-menu !"""
+    comptr_partie = 0
     while True :
-        CONTINUER = 'Veux-tu coninuer à jouer ?! 1 pour oui / 2 pour non '
+        CONTINUER = 'Veux-tu coninuer à jouer ?! 1 pour oui / 2 pour non : '
         saisie_continuer = input(CONTINUER)
         if (int(saisie_continuer) == 1):
             print("Et c'est parti pour un tour !")
+            comptr_partie = comptr_partie + 1
+            print('Tu as déjà fait ', comptr_partie, 'partie(s) !')
             devinette_nombre()
         elif (int(saisie_continuer) == 2):
             print('Aurevoir !')
-            break
-        
+            break  
+    return print('Tu as fait ',comptr_partie, ' partie(s) au total !')
+    
 #################################################################
 #################################################################
 ##                      BLOC INTER-LIGNE                       ##
 #################################################################
 #################################################################
 bonjour_random()
+jouer()
