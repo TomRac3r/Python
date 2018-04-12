@@ -1,5 +1,11 @@
 # Python
 
-import this
-
 My first lines of Python will be displayed in this repository !
+##################################################################################################################################
+<bold>architecture_depart_projet</bold> est un ichier contenant mon architecture de base avant d'écrire un programme et à respecter lors de l'écriture de ce dit programme !
+##
+DevinettePython est un jeu demandant à l'utilisateur de trouver un nombre généré aléatoirement. 
+##
+1337 est un pseudo-codeur en leet. Exemple : "leet" deviendra "1337", "tu es belle" => "7u 35 63113"
+##
+encodeur_césar est u codeur (basé sur le codage de Jules César...). Un ficier texte contenant le texte à encoder est lu, crypter et le texte encrypyté est placé dans un autre fichier. Ensuite on récupère le texte crypté pour le décoder et vérifier que le programme fonctionne correctement.
