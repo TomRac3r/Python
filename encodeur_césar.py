@@ -20,7 +20,7 @@ import string
 jeu_de_caractere = string.printable[:-5]   #caractères sur lesquels on va pouvoir faire un encodage
 sub_car = jeu_de_caractere[-3:] + jeu_de_caractere[:-3]  #jeu de caractèes décaler de 3 caractères
 ##on colle les 3 derniers caractères [-3:] au début de la liste où l'on a retiré les 3 derniers caractères [:-3]
-MSG_TEST = "Tu es belle ce matin !"
+MSG_A_CRYPTER = input('Saisir un texte à crypter : \n')
 
 DICO_ENCRYPT = {}
 for i, k in enumerate(jeu_de_caractere):
@@ -58,12 +58,12 @@ def encrypter(texte_clair, vardico_crypt):
 
 #####################SEPARATION FONCTIONS########################
     
-def decrypter(textesecret, vardico_decrypt):
+def decrypter(texte_secret, vardico_decrypt):
     """Fonction assurant le décryptage du texte en se servant du décalage instaurer 
     dans la partie "section  définition des constantes". Ici le décalage est de 3 
     charactères"""  
     texteclair = []
-    for k in textesecret:
+    for k in texte_secret:
         v = vardico_decrypt[k] 
         texteclair.append(v) 
     return ''.join(texteclair) 
@@ -72,8 +72,7 @@ def decrypter(textesecret, vardico_decrypt):
 ###                 SECTION MAIN DU PROGRAMME                 ###
 #################################################################
 
-textesecret = encrypter(MSG_TEST, DICO_ENCRYPT)
-print(MSG_TEST)
+textesecret = encrypter(MSG_A_CRYPTER, DICO_ENCRYPT)
 print(textesecret)
 texteclair = decrypter(textesecret, DICO_DECRYPT)
 print(texteclair)
