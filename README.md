@@ -1,7 +1,7 @@
 # Python
 
 My first lines of Python will be displayed in this repository !
-##################################################################################################################################
+##
 1/ architecture_depart_projet est un fichier contenant mon architecture de base avant d'écrire un programme et à respecter lors de l'écriture de ce dit programme !
 ##
 2/ DevinettePython est un jeu demandant à l'utilisateur de trouver un nombre généré aléatoirement. 
