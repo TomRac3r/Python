@@ -20,7 +20,7 @@ import string
 jeu_de_caractere = string.printable[:-5]   #caractères sur lesquels on va pouvoir faire un encodage
 sub_car = jeu_de_caractere[-3:] + jeu_de_caractere[:-3]  #jeu de caractèes décaler de 3 caractères
 ##on colle les 3 derniers caractères [-3:] au début de la liste où l'on a retiré les 3 derniers caractères [:-3]
-MSG_TEST = "J'adore les monty Python"
+MSG_TEST = "Tu es belle ce matin !"
 
 DICO_ENCRYPT = {}
 for i, k in enumerate(jeu_de_caractere):
@@ -62,13 +62,11 @@ def decrypter(textesecret, vardico_decrypt):
     """Fonction assurant le décryptage du texte en se servant du décalage instaurer 
     dans la partie "section  définition des constantes". Ici le décalage est de 3 
     charactères"""  
-    texteclair = [] #liste vide pour stocker les charactères une fois cryptés
+    texteclair = []
     for k in textesecret:
-        v = vardico_decrypt[k] #on parcourt le texte à encrypter pour stocker chaque charactères dans 
-                             #une liste
-        #print(v)
-        texteclair.append(v) #on stock les charactères chiffrés dans la liste de sortie
-    return ''.join(texteclair) #on renvoi le texte crypté
+        v = vardico_decrypt[k] 
+        texteclair.append(v) 
+    return ''.join(texteclair) 
 
 #################################################################
 ###                 SECTION MAIN DU PROGRAMME                 ###
