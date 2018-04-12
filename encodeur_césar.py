@@ -52,6 +52,8 @@ for i, k in enumerate(sub_car):
 for c in string.printable[-5:]:
     DICO_DECRYPT[c] = c
 #Il y a une méthode plus simple pour les DICO, il suffit de d'alterner v et k entre les deux DICO...
+    
+ENCRYPT = input('encrypter / decrypter : ') #Si True, crypte vers OUT / si False, crypte vers IN
  
 #################################################################
 #################SECTION DEFINITION DES FONCTIONS################
@@ -87,26 +89,41 @@ def decrypter(texte_secret, vardico_decrypt):
 ####################SECTION MAIN DU PROGRAMME####################
 #################################################################
 
-    
-with open('crypto_text_in.txt', 'r') as fichier_open_read :
-    textesecret = fichier_open_read.read()
-
-txt_encrypt = encrypter(textesecret, DICO_ENCRYPT)
-print(textesecret)
-print('')
-print(txt_encrypt)
-
-with open('crypto_text_out.txt', 'w') as fichier_open_write :
-    fichier_open_write.write(txt_encrypt)
-    
-##########################SEPARATEUR#############################
-    
-with open('crypto_text_out.txt', 'r') as fichier_open_read :
-    texteencrypter = fichier_open_read.read()
-
-textedecrypter = decrypter(texteencrypter, DICO_DECRYPT)
-print('')
-print(textedecrypter)
+if __name__ == "__main__":
+        print('***Projet encodeur_césar***\n')
+        with open('crypto_text_in.txt', 'r') as fich_lect:
+            message = fich_lect.read()
+            
+        if (ENCRYPT == 'encrypter'):
+            txt_resultat = encrypter(message, DICO_ENCRYPT)
+        else :
+            txt_resultat = decrypter(message, DICO_DECRYPT)
+        print(txt_resultat)
+        
+        with open ('crypto_text_out', 'w') as fich_ecri:
+            fich_ecri.write(txt_resultat)
+ 
+##################################################################   
+##########################OLD VERSION#############################   
+#    with open('crypto_text_in.txt', 'r') as fichier_open_read :
+#        textesecret = fichier_open_read.read()
+#    
+#    txt_encrypt = encrypter(textesecret, DICO_ENCRYPT)
+#    print(textesecret)
+#    print('')
+#    print(txt_encrypt)
+#    
+#    with open('crypto_text_out.txt', 'w') as fichier_open_write :
+#        fichier_open_write.write(txt_encrypt)
+#        
+###########################SEPARATEUR#############################
+#        
+#    with open('crypto_text_out.txt', 'r') as fichier_open_read :
+#        texteencrypter = fichier_open_read.read()
+#    
+#    textedecrypter = decrypter(texteencrypter, DICO_DECRYPT)
+#    print('')
+#    print(textedecrypter)
 
 #################################################################
 ###########################_FIN_#################################
