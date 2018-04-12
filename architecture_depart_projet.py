@@ -23,13 +23,14 @@ import matplotlib.pyplot as plt
 ###              SECTION DEFINITION DES CONSTANTES            ###
 #################################################################
 
-
+CONSTANTE = 0
 
 #################################################################
 ###              SECTION DEFINITIN DES FONCTIONS              ###
 #################################################################
 
-
+def fonction():
+    """description de la fonction/doc-chaîne"""
 
 #################################################################
 ###                 SECTION MAIN DU PROGRAMME                 ###

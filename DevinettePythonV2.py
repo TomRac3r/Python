@@ -55,7 +55,7 @@ def bonjour_random():
         
 def nombre_random() :
     """Fonction pour faire un nombre random dans l'intervalle [0, 10]"""
-    nb_random = random.randint(0, 10)
+    nb_random = random.randint(0, 2)
     return nb_random
 
 #################################################################
@@ -68,7 +68,7 @@ def devinette_nombre():
     """Fonction permettant un petit jeu de devinette, on génére un nb_random puis on le compare avec
     un nombre saisi par l'utilisateur (nbr_du_joueur) / On affiche aussi le nb_esai avec un simple
     incrément à chaque tentative."""
-    nb_random = random.randint(0, 3)
+    nb_random = nombre_random()
     nb_essai = 0
     INVITE = 'Saisi un nombre : ' 
 #INVITE est en majuscules car c'est une constante, 
@@ -85,7 +85,6 @@ def devinette_nombre():
         if (nb_random == int(nbr_du_joueur)):
             print("GG mon gral ! t'as trouvé")
             print('Tu as essayé ', nb_essai, ' fois avant de réussir!')
-            return nb_essai
             break
         elif (int(nbr_du_joueur) > nb_random):
             print('Ton nombre est plus grand ! essaye encore...')
@@ -93,6 +92,7 @@ def devinette_nombre():
             print('Ton nombre est plus petit...essaye encore !')
         nb_essai = nb_essai + 1
         print('Tu es déjà à ton ', nb_essai, ' essai...')
+    return nb_essai 
 
 #################################################################
 #################################################################
@@ -103,6 +103,7 @@ def devinette_nombre():
 def jouer():
     """Fonction permettant le jeu 'devinette_nombre' avec un pseudo-menu !"""
     comptr_partie = 0
+    nb_essai_total = 0
     while True :
         if (comptr_partie == 0) :
             CONTINUER = 'Veux-tu commencer à jouer ?! 1 pour oui / 2 pour non : '
@@ -115,16 +116,17 @@ def jouer():
             print("Et c'est parti pour un tour !")
             print('Tu en es à ta première partie !')
             comptr_partie = comptr_partie + 1
-            devinette_nombre()
-        elif (int(saisie_continuer) == 1):
+            
+        else:
             print("Et c'est parti pour un tour !")
             print('Tu as déjà fait ', comptr_partie, 'partie(s) !')
-            comptr_partie = comptr_partie + 1
-            devinette_nombre()
+            comptr_partie = comptr_partie + 1     
+            
         if (int(saisie_continuer) == 2):
             print('Aurevoir !')
             break  
     return print('Tu as fait ',comptr_partie, ' partie(s) au total !')
+    return print('tu as fait ', nb_essai_total, ' essai(s) au total !')
     
 #################################################################
 #################################################################
